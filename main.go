@@ -10,7 +10,7 @@ import (
 
 func usage() string {
 	return "usage: gg <command> [<args>]" + "\n\n" +
-		"List of commands:" + "\n  " +
+		"List of commands:" +
 		commands.StatusUsage()
 }
 

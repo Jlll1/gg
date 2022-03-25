@@ -1,9 +1,13 @@
 package commands
 
-import "os/exec"
+import (
+	"os/exec"
+
+	"github.com/Jlll1/gg/utils"
+)
 
 func StatusUsage() string {
-	return "s\tPrints short status"
+	return utils.FormatUsage("s", []string{}, "Prints short status")
 }
 
 func Status() string {
