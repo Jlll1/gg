@@ -1,11 +1,20 @@
-package gg
+package main
 
 import (
+	"fmt"
 	"os"
-	"os/exec"
+
+	"github.com/Jlll1/gg/commands"
 )
 
 func main() {
-	command := os.Args[0]
-	exec.Command("git", command)
+	var result string
+	command := os.Args[1]
+
+	switch command {
+	case "s":
+		result = commands.Status()
+	}
+
+	fmt.Printf(result)
 }

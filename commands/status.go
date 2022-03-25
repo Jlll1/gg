@@ -1,5 +1,8 @@
 package commands
 
-func Status() {
+import "os/exec"
 
+func Status() string {
+	output, _ := exec.Command("git", "status", "-s").Output()
+	return string(output[:])
 }
