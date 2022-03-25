@@ -9,7 +9,9 @@ import (
 )
 
 func usage() string {
-	return "bla bla"
+	return "usage: gg <command> [<args>]" + "\n\n" +
+		"List of commands:" + "\n  " +
+		commands.StatusUsage()
 }
 
 func main() {
