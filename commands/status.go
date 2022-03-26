@@ -5,7 +5,7 @@ import (
 )
 
 func StatusUsage() string {
-	return utils.FormatUsage("s", []string{}, "Prints short status")
+	return utils.FormatUsage("s", []string{}, "Equivalent to git status --short")
 }
 
 func Status() string {

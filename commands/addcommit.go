@@ -11,7 +11,7 @@ func AddCommitUsage() string {
 	return utils.FormatUsage(
 		"ac",
 		[]string{"[<files>]", "<message>"},
-		"Adds files which path contain specified strings to a commit with specified message.")
+		"Equivalent to git add [*<file>*] && git commit -m <message>")
 }
 
 func AddCommit(args []string) string {
