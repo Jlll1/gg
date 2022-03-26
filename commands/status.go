@@ -1,8 +1,6 @@
 package commands
 
 import (
-	"os/exec"
-
 	"github.com/Jlll1/gg/utils"
 )
 
@@ -11,6 +9,6 @@ func StatusUsage() string {
 }
 
 func Status() string {
-	output, _ := exec.Command("git", "status", "--sort").Output()
-	return string(output[:])
+	output, _ := Git("status", []string{"--short"})
+	return output
 }
