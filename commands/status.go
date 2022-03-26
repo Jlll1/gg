@@ -1,12 +1,14 @@
 package commands
 
-import "os/exec"
+import (
+	"github.com/Jlll1/gg/utils"
+)
 
 func StatusUsage() string {
-	return "s\tPrints short status"
+	return utils.FormatUsage("s", []string{}, "Prints short status")
 }
 
 func Status() string {
-	output, _ := exec.Command("git", "status", "--sort").Output()
-	return string(output[:])
+	output, _ := Git("status", []string{"--short"})
+	return output
 }
