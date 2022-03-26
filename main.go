@@ -35,9 +35,11 @@ func main() {
 	switch command {
 	case "s":
 		result = commands.Status()
+	case "ac":
+		result = commands.AddCommit(os.Args[2:])
 	default:
 		result = usage()
 	}
 
-	fmt.Printf(result)
+	fmt.Printf(result + "\n")
 }
