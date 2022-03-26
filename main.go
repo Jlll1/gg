@@ -16,8 +16,10 @@ func usage() string {
 	builder.WriteString("List of commands:\n")
 
 	writer := tabwriter.NewWriter(&builder, 0, 8, 2, '\t', tabwriter.AlignRight)
-	fmt.Fprintln(writer, commands.StatusUsage())
 	fmt.Fprintln(writer, commands.AddCommitUsage())
+	fmt.Fprintln(writer, commands.BranchUsage())
+	fmt.Fprintln(writer, commands.BranchesClearUsage())
+	fmt.Fprintln(writer, commands.StatusUsage())
 	writer.Flush()
 
 	return builder.String()
@@ -33,10 +35,14 @@ func main() {
 	}
 
 	switch command {
-	case "s":
-		result = commands.Status()
 	case "ac":
 		result = commands.AddCommit(os.Args[2:])
+	case "b":
+		result = commands.Branch()
+	case "bc":
+		result = commands.BranchesClear()
+	case "s":
+		result = commands.Status()
 	default:
 		result = usage()
 	}
