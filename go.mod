@@ -1,3 +1,3 @@
 module github.com/Jlll1/gg
 
-go 1.17
+go 1.18
