@@ -27,7 +27,7 @@ func FileReset(args []string) string {
 	})
 
 	matchedFiles = utils.Map(matchedFiles, func(x string) string {
-		return strings.Split(x, " ")[1]
+		return strings.Split(x, " ")[2]
 	})
 
 	Git("checkout", []string{"--", fmt.Sprintf("*%s*", filePredicate)})
