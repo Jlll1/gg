@@ -26,3 +26,12 @@ func Filter[T any](arr []T, predicate func(item T) bool) []T {
 
 	return arr[:count]
 }
+
+func Map[T any, U any](arr []T, mapping func(item T) U) []U {
+	result := []U{}
+	for _, item := range arr {
+		result = append(result, mapping(item))
+	}
+
+	return result
+}

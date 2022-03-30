@@ -19,6 +19,7 @@ func usage() string {
 	fmt.Fprintln(writer, commands.AddCommitUsage())
 	fmt.Fprintln(writer, commands.BranchUsage())
 	fmt.Fprintln(writer, commands.BranchesClearUsage())
+	fmt.Fprintln(writer, commands.FileResetUsage())
 	fmt.Fprintln(writer, commands.StatusUsage())
 	writer.Flush()
 
@@ -41,6 +42,8 @@ func main() {
 		result = commands.Branch()
 	case "bc":
 		result = commands.BranchesClear()
+	case "fr":
+		result = commands.FileReset(os.Args[2:])
 	case "s":
 		result = commands.Status()
 	default:
