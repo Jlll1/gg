@@ -21,6 +21,7 @@ func usage() string {
 	fmt.Fprintln(writer, commands.BranchesClearUsage())
 	fmt.Fprintln(writer, commands.FileResetUsage())
 	fmt.Fprintln(writer, commands.StatusUsage())
+	fmt.Fprintln(writer, commands.SquashUsage())
 	writer.Flush()
 
 	return builder.String()
@@ -39,13 +40,15 @@ func main() {
 	case "ac":
 		result = commands.AddCommit(os.Args[2:])
 	case "b":
-		result = commands.Branch()
+		result = commands.Branch(os.Args[2:])
 	case "bc":
 		result = commands.BranchesClear()
 	case "fr":
 		result = commands.FileReset(os.Args[2:])
 	case "s":
 		result = commands.Status()
+	case "sq":
+		result = commands.Squash(os.Args[2:])
 	default:
 		result = usage()
 	}
