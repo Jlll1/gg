@@ -11,8 +11,8 @@ func BranchUsage() string {
 	return utils.FormatUsage("b", []string{}, "Equivalent to git branch")
 }
 
-func Branch() string {
-	result, _ := Git("branch", []string{})
+func Branch(args []string) string {
+	result, _ := Git("branch", args)
 	return result
 }
 
@@ -22,7 +22,7 @@ func BranchesClearUsage() string {
 
 func BranchesClear() string {
 	var branchesToDelete []string
-	for _, branch := range strings.Split(Branch(), "\n") {
+	for _, branch := range strings.Split(Branch([]string{}), "\n") {
 		if branch == "" || branch[0] == '*' {
 			continue
 		}
